@@ -166,6 +166,7 @@ export interface IncomingInput {
     overrideConfig?: ICommonObject
     socketIOClientId?: string
     chatId?: string
+    stopNodeId?: string
 }
 
 export interface IActiveChatflows {
@@ -187,12 +188,6 @@ export interface IOverrideConfig {
     label: string
     name: string
     type: string
-}
-
-export interface IDatabaseExport {
-    chatmessages: IChatMessage[]
-    chatflows: IChatFlow[]
-    apikeys: ICommonObject[]
 }
 
 export type ICredentialDataDecrypted = ICommonObject
