@@ -182,15 +182,6 @@ export const initNode = (nodeData, newNodeId) => {
     return nodeData
 }
 
-export const getEdgeLabelName = (source) => {
-    const sourceSplit = source.split('-')
-    if (sourceSplit.length && sourceSplit[0].includes('ifElse')) {
-        const outputAnchorsIndex = sourceSplit[sourceSplit.length - 1]
-        return outputAnchorsIndex === '0' ? 'true' : 'false'
-    }
-    return ''
-}
-
 export const isValidConnection = (connection, reactFlowInstance) => {
     const sourceHandle = connection.sourceHandle
     const targetHandle = connection.targetHandle
@@ -286,6 +277,7 @@ export const generateExportFlowData = (flowData) => {
             name: node.data.name,
             type: node.data.type,
             baseClasses: node.data.baseClasses,
+            tags: node.data.tags,
             category: node.data.category,
             description: node.data.description,
             inputParams: node.data.inputParams,
